@@ -1,0 +1,153 @@
+.faq-section {
+  padding: 80px 20px;
+  background-color: #0b0f19; // Глубокий темный фон под стать современным сайтам
+  color: #f3f4f6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 48px;
+
+    .faq-subtitle {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #3b82f6; // Акцентный синий (цвет фреона/холода)
+      font-weight: 600;
+    }
+
+    .faq-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin: 12px 0;
+      letter-spacing: -0.5px;
+      background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .faq-description {
+      color: #9ca3af;
+      font-size: 16px;
+    }
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .faq-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(59, 130, 246, 0.5);
+
+      .faq-icon {
+        transform: rotate(180deg);
+        color: #3b82f6;
+      }
+
+      .faq-icon-wrapper {
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .faq-content {
+        grid-template-rows: 1fr;
+        opacity: 1;
+      }
+    }
+  }
+
+  .faq-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+
+    .faq-question {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: color 0.2s ease;
+    }
+  }
+
+  .faq-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-icon {
+    color: #9ca3af;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+  }
+
+  // Сверхплавная анимация высоты без JS через CSS Grid
+  .faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    opacity: 0;
+  }
+
+  .faq-content-inner {
+    overflow: hidden;
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px 24px;
+    color: #9ca3af;
+    line-height: 1.6;
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+// Адаптив под мобилки
+@media (max-width: 640px) {
+  .faq-section {
+    padding: 48px 16px;
+
+    .faq-header {
+      .faq-title { font-size: 28px; }
+    }
+
+    .faq-trigger {
+      padding: 20px;
+      .faq-question { font-size: 16px; }
+    }
+
+    .faq-answer {
+      padding: 0 20px 20px 20px;
+      font-size: 14px;
+    }
+  }
+}
