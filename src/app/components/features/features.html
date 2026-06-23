@@ -1,0 +1,19 @@
+<section class="features">
+  <div class="features__container">
+    <div class="features__header">
+      <h2 class="features__main-title">Технологии для вашего комфорта</h2>
+      <p class="features__lead">Современные сплит-системы, которые берут заботу о микроклимате на себя</p>
+    </div>
+
+    <div class="features__grid">
+      <!-- Использование нового синтаксиса Angular контроля потока @for -->
+      @for (item of features(); track item.title) {
+        <div class="card">
+          <div class="card__icon">{{ item.icon }}</div>
+          <h3 class="card__title">{{ item.title }}</h3>
+          <p class="card__description">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

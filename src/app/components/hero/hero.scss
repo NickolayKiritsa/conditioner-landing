@@ -1,0 +1,99 @@
+.hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f9ff 0%, #e6f0fa 100%);
+  overflow: hidden;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+    @media (max-width: 992px) { margin: 0 auto; }
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: rgba(#007aff, 0.1);
+    color: #007aff;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+    font-weight: 700;
+
+    @media (max-width: 576px) { font-size: 2.2rem; }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: #86868b;
+    line-height: 1.5;
+    margin-bottom: 35px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 15px;
+
+    @media (max-width: 992px) { justify-content: center; }
+    @media (max-width: 576px) { flex-direction: column; }
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    @media (max-width: 992px) {
+      order: -1;
+      margin: 0 auto;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
+  }
+}
+
+// Базовые стили кнопок (обычно выносятся в общие стили)
+.btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+
+  &--primary {
+    background-color: #007aff;
+    color: #fff;
+    &:hover { background-color: #0062cc; }
+  }
+
+  &--secondary {
+    background-color: #fff;
+    color: #1d1d1f;
+    border: 1px solid #d2d2d7;
+    &:hover { background-color: #f5f5f7; }
+  }
+}
