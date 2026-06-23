@@ -71,29 +71,9 @@
   &__image {
     max-width: 100%;
     height: auto;
+    border: 1px solid #e5e5ea;
+    border-radius: 24px;
+    width: 550px;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
-  }
-}
-
-// Базовые стили кнопок (обычно выносятся в общие стили)
-.btn {
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease;
-
-  &--primary {
-    background-color: #007aff;
-    color: #fff;
-    &:hover { background-color: #0062cc; }
-  }
-
-  &--secondary {
-    background-color: #fff;
-    color: #1d1d1f;
-    border: 1px solid #d2d2d7;
-    &:hover { background-color: #f5f5f7; }
   }
 }

@@ -8,7 +8,6 @@ import {Component, signal} from '@angular/core';
 })
 export class Header {
   isMenuOpen = signal(false);
-  phoneNumber = signal('+7 (800) 555-35-35');
 
   toggleMenu() {
     this.isMenuOpen.update(value => !value);

@@ -1,0 +1,100 @@
+<div class="compare-container">
+  <header class="compare-header">
+    <h2>Два вида преносими климатици</h2>
+    <p>На пазара намирате два основни типа, различаващи се по начин на охлаждане, ниво на шум и условия на употреба.</p>
+  </header>
+
+  <div class="cards-grid">
+    <div class="compare-card freon-card">
+      <div class="card-badge badge-freon">Класически избор</div>
+      <div class="card-header">
+        <span class="icon">💨</span>
+        <h3>С тръба (фреон)</h3>
+      </div>
+
+      <p class="card-description">
+        Работят с фреон и извеждат горещия въздух навън чрез тръба, поставена в процепа на прозорец.
+        Охлаждат добре, но изискват подходящ прозорец и по-внимателна инсталация.
+      </p>
+
+      <ul class="features-list">
+        <li>
+          <span class="feature-label">Нужен прозорец:</span>
+          <span class="feature-value status-negative">Да (за тръбата)</span>
+        </li>
+        <li>
+          <span class="feature-label">Ниво на шум:</span>
+          <span class="feature-value status-notice">По-шумни (компресор в стаята)</span>
+        </li>
+        <li>
+          <span class="feature-label">Консумация на ток:</span>
+          <span class="feature-value">По-висока</span>
+        </li>
+        <li>
+          <span class="feature-label">Монтаж:</span>
+          <span class="feature-value">Нужна инсталация</span>
+        </li>
+        <li>
+          <span class="feature-label">Без фреон:</span>
+          <span class="feature-value status-negative">Не</span>
+        </li>
+        <li>
+          <span class="feature-label">Мобилност:</span>
+          <span class="feature-value">Ограничена</span>
+        </li>
+      </ul>
+
+      <div class="card-footer">
+        <div class="price-label">Цена</div>
+        <div class="price-value">400 – 1500 лв.</div>
+      </div>
+    </div>
+
+    <div class="compare-card water-card">
+      <div class="card-badge badge-water">Екологичен & Икономичен</div>
+      <div class="card-header">
+        <span class="icon">💧</span>
+        <h3>Без тръба (с вода)</h3>
+      </div>
+
+      <p class="card-description">
+        Охлаждат чрез изпарение: засмукват горещия въздух, прекарват го през навлажнен охлаждащ филтър
+        и го връщат свеж, хладен и пречистен. Работят навсякъде (напр. <strong>Arctic Air Ultra</strong>).
+      </p>
+
+      <ul class="features-list">
+        <li>
+          <span class="feature-label">Нужен прозорец:</span>
+          <span class="feature-value status-positive">Не се изисква</span>
+        </li>
+        <li>
+          <span class="feature-label">Ниво на шум:</span>
+          <span class="feature-value status-positive">Нисък</span>
+        </li>
+        <li>
+          <span class="feature-label">Захранване:</span>
+          <span class="feature-value status-positive">Контакт / USB порт</span>
+        </li>
+        <li>
+          <span class="feature-label">Монтаж:</span>
+          <span class="feature-value status-positive">Не (Тръба не е нужна)</span>
+        </li>
+        <li>
+          <span class="feature-label">Без фреон:</span>
+          <span class="feature-value status-positive">Да (Еко филтър)</span>
+        </li>
+        <li>
+          <span class="feature-label">Мобилност:</span>
+          <span class="feature-value status-positive">Пълна</span>
+        </li>
+      </ul>
+
+      <div class="card-footer">
+        <div class="price-label">Цена</div>
+        <div class="price-value">от 49 евро</div>
+      </div>
+    </div>
+  </div>
+  <app-purchase-button style="margin-top: 20px" [text]="'Вземете'"/>
+</div>
+

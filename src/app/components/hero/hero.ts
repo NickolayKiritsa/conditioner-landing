@@ -1,16 +1,17 @@
 import {Component, signal} from '@angular/core';
+import {PurchaseButton} from '../purchase-button/purchase-button';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [
+    PurchaseButton
+  ],
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
 export class Hero {
-  title = signal('Комфортный климат в вашем доме за 20 минут');
-  subtitle = signal('Продажа и профессиональный монтаж инверторных кондиционеров с гарантией до 5 лет.');
+  title = signal('Преносим климатик без външно тяло');
+  subtitle = signal('Видове, предимства и как да изберете');
 
-  onOrder() {
-    console.log('Клик по кнопке заказа. Открываем модалку или скроллим к форме.');
-  }
+
 }

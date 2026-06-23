@@ -1,11 +1,8 @@
 <header class="header">
   <div class="header__container">
-    <!-- Логотип -->
     <a href="#" class="header__logo" (click)="closeMenu()">
-      <span class="logo-icon">❄️</span> Clima<span class="logo-accent">Pro</span>
+      <span class="logo-icon">❄️</span> Arctic<span class="logo-accent">Air</span>
     </a>
-
-    <!-- Навигация (десктопная и мобильная) -->
     <nav class="header__nav" [class.header__nav--open]="isMenuOpen()">
       <ul class="header__menu">
         <li><a href="#catalog" class="header__link" (click)="closeMenu()">Каталог</a></li>
@@ -13,21 +10,7 @@
         <li><a href="#calculator" class="header__link" (click)="closeMenu()">Расчет мощности</a></li>
         <li><a href="#reviews" class="header__link" (click)="closeMenu()">Отзывы</a></li>
       </ul>
-
-      <!-- Контакты внутри мобильного меню -->
-      <div class="header__mobile-contacts">
-        <a [href]="'tel:' + phoneNumber()" class="header__phone">{{ phoneNumber() }}</a>
-        <button class="btn btn--primary btn--sm">Вызвать замерщика</button>
-      </div>
     </nav>
-
-    <!-- Правый блок на десктопе -->
-    <div class="header__actions">
-      <a [href]="'tel:' + phoneNumber()" class="header__phone">{{ phoneNumber() }}</a>
-      <button class="btn btn--primary btn--sm">Вызвать замерщика</button>
-    </div>
-
-    <!-- Бургер-меню для мобилок -->
     <button
       class="header__burger"
       [class.header__burger--active]="isMenuOpen()"

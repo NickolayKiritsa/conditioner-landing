@@ -1,4 +1,5 @@
 import {Component, signal} from '@angular/core';
+import {PurchaseButton} from '../purchase-button/purchase-button';
 interface Feature {
   icon: string;
   title: string;
@@ -6,7 +7,9 @@ interface Feature {
 }
 @Component({
   selector: 'app-features',
-  imports: [],
+  imports: [
+    PurchaseButton
+  ],
   templateUrl: './features.html',
   styleUrl: './features.scss',
 })
