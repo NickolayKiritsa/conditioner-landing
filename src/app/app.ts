@@ -6,10 +6,11 @@ import {Header} from './components/header/header';
 import {Footer} from './components/footer/footer';
 import {Faq} from './components/faq/faq';
 import {Compare} from './components/compare/compare';
+import {Promo} from './components/promo/promo';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, Features, Header, Footer, Faq, Compare],
+  imports: [Hero, Features, Header, Footer, Faq, Compare, Promo],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

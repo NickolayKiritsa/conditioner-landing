@@ -1,3 +1,4 @@
+<!--
 <section class="features">
   <div class="features__container">
     <div class="features__header">
@@ -6,7 +7,7 @@
     </div>
 
     <div class="features__grid">
-      <!-- Использование нового синтаксиса Angular контроля потока @for -->
+      &lt;!&ndash; Использование нового синтаксиса Angular контроля потока @for &ndash;&gt;
       @for (item of features(); track item.title) {
         <div class="card">
           <div class="card__icon">{{ item.icon }}</div>
@@ -17,3 +18,37 @@
     </div>
   </div>
 </section>
+-->
+<div class="promo-card">
+  <div class="promo-content">
+    <h2 class="promo-title">Какво е преносимият климатик и как работи</h2>
+
+    <p class="promo-description">
+      Преносимият климатик е уред без отделен агрегат навън. Всички работни части са събрани в едно компактно тяло.
+      Поставяте го там, където ви е нужен, включвате и той работи веднага.
+    </p>
+
+    <div class="divider"></div>
+
+    <ul class="promo-features">
+      <li>
+        <span class="icon">✕</span>
+        <span><strong>Без монтаж:</strong> За разлика от стандартния климатик, монтаж не е нужен.</span>
+      </li>
+      <li>
+        <span class="icon">✕</span>
+        <span><strong>Без пробиване:</strong> Не пробивате стени и не ангажирате техник.</span>
+      </li>
+      <li>
+        <span class="icon">✓</span>
+        <span><strong>Идеален за:</strong> Апартамент под наем, домашен офис, каравана или вила.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="promo-actions">
+    <app-purchase-button  (click)="onOrder()">
+      <span class="arrow">▶</span> Поръчайте
+    </app-purchase-button>
+  </div>
+</div>

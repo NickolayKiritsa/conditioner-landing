@@ -1,0 +1,268 @@
+<div class="landing-wrapper">
+
+  <!-- HERO BANNER (Главный экран) -->
+  <header class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="badge">🔥 Лятна Промоция -50%</span>
+        <h1>Преносим климатик без външно тяло</h1>
+        <p class="subtitle">Видове, предимства и как да изберете идеалното решение за жегите</p>
+        <app-purchase-button  text="Купете сега" style="margin-top: 20px;"/>
+      </div>
+      <div class="hero-image-placeholder">
+        <!-- [📷 СНИМКА: Продуктова снимка Arctic Air Ultra на бял фон — hero банер] -->
+        <div class="img-mock">
+          <img src="https://starmag.in.ua/content/images/30/536x536l50nn0/portativnyy-konditsioner-okhladitel-s-podsvetkoy-arctic-air-ultra-plus-perenosnoy-mobilnyy-ventilyator-7-vt-s-funktsiey-ochistitel-uvlazhnitel-vozdukha-usb-82051769909718.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ВВЕДЕНИЕ / КАК РАБОТАЕТ -->
+  <section class="section intro-section">
+    <div class="container text-center max-w-700">
+      <h2>Какво е преносимият климатик и как работи</h2>
+      <p class="lead">
+        Преносимият климатик е уред без отделен агрегат навън. Всички работни части са събрани в едно компактно тяло.
+        Поставяте го там, където ви е нужен, включвате и той работи веднага.
+      </p>
+      <p class="text-muted">
+        За разлика от стандартния климатик, монтаж не е нужен. Не пробивате стени, не ангажирате техник и не искате разрешение от наемодателя.
+        Подходящ е за апартамент под наем, домашен офис, каравана или вила.
+      </p>
+      <app-purchase-button text="Поръчайте" class="btn"/>
+    </div>
+  </section>
+
+  <!-- СРАВНЕНИЕ ТИПОВ -->
+  <section class="section comparison-section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2>Два вида преносими климатици</h2>
+        <p>На пазара намирате два основни типа, различаващи се по начин на охлаждане, ниво на шум и условия на употреба.</p>
+      </div>
+
+      <!-- Вместо скучной таблицы делаем карточки сравнения -->
+      <div class="comparison-grid">
+        <div class="compare-card line-type">
+          <h3>С тръба (фреон)</h3>
+          <p class="type-desc">Традиционни мобилни системи, извеждащи въздуха навън.</p>
+          <ul class="spec-list">
+            <li><span>Нужен прозорец:</span> <strong>Да</strong></li>
+            <li><span>Ниво на шум:</span> <strong class="text-danger">По-висок</strong></li>
+            <li><span>Потребление на ток:</span> <strong>По-високо</strong></li>
+            <li><span>Монтаж:</span> <strong>Нужна тръба</strong></li>
+            <li><span>Използва фреон:</span> <strong>Да</strong></li>
+            <li><span>Мобилност:</span> <strong>Ограничена</strong></li>
+            <li class="price"><span>Цена:</span> <strong>400–1500 лв</strong></li>
+          </ul>
+        </div>
+
+        <div class="compare-card water-type active">
+          <div class="card-badge">Най-продаван</div>
+          <h3>Без тръба (с вода)</h3>
+          <p class="type-desc">Евапоративни системи — работят на принципа на водно изпарение.</p>
+          <ul class="spec-list">
+            <li><span>Нужен прозорец:</span> <strong class="text-success">Не</strong></li>
+            <li><span>Ниво на шум:</span> <strong class="text-success">Нисък</strong></li>
+            <li><span>Потребление на ток:</span> <strong class="text-success">Ниско</strong></li>
+            <li><span>Монтаж:</span> <strong class="text-success">Не</strong></li>
+            <li><span>Използва фреон:</span> <strong class="text-success">Без фреон (Да)</strong></li>
+            <li><span>Мобилност:</span> <strong class="text-success">Пълна</strong></li>
+            <li class="price highlighted"><span>Цена:</span> <strong>От 49 евро</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="infographic-placeholder">
+        <!-- [📷 СНИМКА: Инфографика: климатик с тръба vs Arctic Air (без тръба)] -->
+        <div class="img-mock-sm">Инфографика: Сравнение на технологиите</div>
+      </div>
+
+      <div class="text-center mt-4">
+        <app-purchase-button text="Вземете" class="btn" (click)="scrollTo('order')"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДЕТАЛИЗАЦИЯ И ХАРАКТЕРИСТИКИ ARCTIC AIR -->
+  <section class="section product-specs-section">
+    <div class="container">
+      <div class="grid-2col">
+        <div>
+          <h2>Arctic Air Ultra</h2>
+          <p class="subtitle-brand">Преносим мини климатик с технология Hydro-Chill</p>
+          <p>
+            Arctic Air Ultra е компактен преносим климатик без тръба и без фреон. Засмуква горещия въздух от помещението,
+            прекарва го през охлаждащ филтър с вода и го връща хладен, пречистен и овлажнен.
+            Разполага с три скорости, LED нощна светлина в 7 цвята и изключително тиха работа.
+          </p>
+          <div class="image-grid-placeholder">
+            <!-- [📷 СНИМКА: Arctic Air Ultra в употреба: бюро, легло, детска стая] -->
+            <div class="img-mock-sm">Arctic Air в употреба (Интериор)</div>
+          </div>
+        </div>
+
+        <!-- Сетка параметров вместо таблицы -->
+        <div class="specs-grid-box">
+          <h3>Технически данни</h3>
+          <div class="specs-grid">
+            <div class="spec-item"><strong>Размери</strong><span>21 × 21 × 26 см</span></div>
+            <div class="spec-item"><strong>Скорости</strong><span>3 (ниска / средна / висока)</span></div>
+            <div class="spec-item"><strong>Автономност</strong><span>До 8 часа на пълнене</span></div>
+            <div class="spec-item"><strong>Функции</strong><span>Охлаждане, овлажняване, пречистване</span></div>
+            <div class="spec-item"><strong>Захранване</strong><span>Контакт, USB или Powerbank</span></div>
+            <div class="spec-item"><strong>Екологичен</strong><span>Без фреон и химия</span></div>
+            <div class="spec-item full-width">
+              <strong>LED осветление (7 цвята)</strong>
+              <div class="color-dots">
+                <span class="dot blue"></span><span class="dot red"></span><span class="dot white"></span>
+                <span class="dot brown"></span><span class="dot purple"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+            </div>
+          </div>
+          <div class="price-tag">
+            <span class="old-price">98 евро</span>
+            <span class="new-price">49 евро</span>
+            <span class="discount-badge">50% Отстъпка</span>
+          </div>
+          <app-purchase-button text="Купете сега" class="btn w-100" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕТКА ПРЕИМУЩЕСТВ (BENEFITS GRID) -->
+  <section class="section benefits-section bg-dark text-white">
+    <div class="container">
+      <h2 class="text-center text-white">🌟 Предимства на Arctic Air Ultra</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">💧</div>
+          <h4>Бърза настройка</h4>
+          <p>Напълнете резервоара с вода и включете в контакт или USB — без сложни инсталации и без фреон.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌙</div>
+          <h4>Ползвайте го и нощем</h4>
+          <p>Работи изключително тихо. Вграденото 7-цветно LED осветление създава приятна атмосфера за сън.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🏠</div>
+          <h4>Носете го навсякъде</h4>
+          <p>Подходящ за спалня, кухня, хол, офис или каравана благодарение на супер компактния си дизайн.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
+          <h4>Безопасен за деца</h4>
+          <p>Без фреон и опасни химически компоненти. Едновременно охлажда, овлажнява и пречиства въздуха.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <app-purchase-button text="Искам Arctic Air" class="btn w-100" />
+      </div>
+    </div>
+  </section>
+
+  <!-- СИТУАЦИИ / ИСПОЛЬЗОВАНИЕ -->
+  <section class="section ситуации-section">
+    <div class="container">
+      <h2 class="text-center">За какви помещения е подходящ?</h2>
+      <div class="situations-container">
+        <div class="sit-row check"><span>Спалня & Детска стая</span> <strong>Да (тиха работа, безопасност за деца)</strong></div>
+        <div class="sit-row check"><span>Домашен офис & Работно бюро</span> <strong>Да (перфектно охлажда личното пространство)</strong></div>
+        <div class="sit-row check"><span>Каравана, вила, бунгало</span> <strong>Да (захранва се дори от Powerbank)</strong></div>
+        <div class="sit-row check"><span>Апартамент под наем</span> <strong>Да (без монтаж и без разправии с хазяи)</strong></div>
+        <div class="sit-row cross"><span>Големи зали (над 40 кв.м)</span> <strong>По-добре стационарен климатик</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОШАГОВАЯ ИНСТРУКЦИЯ (HOW TO USE) -->
+  <section class="section how-to-use bg-light">
+    <div class="container text-center">
+      <h2>Как се ползва преносим климатик Arctic Air Ultra</h2>
+      <p>Употребата е изключително проста и отнема под 1 минута.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4>Напълнете</h4>
+          <p>Сипете вода в резервоара през горния отвор.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4>Включете</h4>
+          <p>Свържете кабела към контакт или USB порт.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4>Изберете</h4>
+          <p>Натиснете бутона и изберете една от 3-те скорости.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h4>Насочете</h4>
+          <p>Настройте решетката на вентилатора директно към вас.</p>
+        </div>
+      </div>
+
+      <div class="infographic-placeholder">
+        <!-- [📷 СНИМКА: Илюстрация: 4 стъпки — напълнете, включете, изберете скорост, насочете] -->
+        <div class="img-mock-sm">Снимка: 4 лесни стъпки за употреба</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФОРМА ЗАКАЗА И УСЛОВИЯ ДОСТАВКИ -->
+  <section id="order" class="section order-section">
+    <div class="container">
+      <div class="order-box-grid">
+
+        <!-- Условия доставки слева -->
+        <div class="delivery-info">
+          <h3>Бърза доставка и гаранция</h3>
+          <ul class="delivery-list">
+            <li><strong>🚚 Срок на доставка:</strong> 1–3 работни дни</li>
+            <li><strong>💵 Без предплащане:</strong> Плащате само при получаване (Наложен платеж)</li>
+            <li><strong>🛡️ Гаранция & Качество:</strong> Всички уреди са фабрично тествани и сертифицирани</li>
+            <li><strong>📞 24/7 Поддръжка:</strong> Денонощно обслужване на клиенти</li>
+          </ul>
+        </div>
+
+        <!-- Простая интерактивная форма справа -->
+        <div class="order-form-card">
+          <h3>Поръчайте Arctic Air Ultra</h3>
+          <div class="form-price">Цена: <span class="accent-color">49 евро</span> <small>(98 евро)</small></div>
+            <app-purchase-button text="Спестете 50% сега" class="btn w-100" />
+          <p class="form-note">* Наш сътрудник ще се свърже с Вас за потвърждение на адреса.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- АККОРДЕОН FAQ -->
+  <section class="section faq-section bg-light">
+    <div class="container max-w-700">
+      <h2 class="text-center">Често задавани въпроси (FAQ)</h2>
+
+      <div class="faq-container">
+        <!-- Повторите этот блок для каждого вопроса -->
+        <div class="faq-item" *ngFor="let item of faqItems; let i = index" [class.open]="item.isOpen">
+          <div class="faq-question" (click)="toggleFaq(i)">
+            <span>{{ item.question }}</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>{{ item.answer }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
