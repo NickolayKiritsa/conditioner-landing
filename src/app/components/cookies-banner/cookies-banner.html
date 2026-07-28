@@ -1,0 +1,20 @@
+@if (isVisible()) {
+  <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Известие за използване на бисквитки">
+    <div class="cookie-banner__container">
+      <div class="cookie-banner__content">
+        <span class="cookie-banner__icon">🍪</span>
+        <p class="cookie-banner__text">
+          Ние използваме бисквитки (cookies) за подобряване на работата на сайта и анализ на трафика.
+          Продължавайки да използвате сайта, вие се съгласявате с нашата
+          <a routerLink="/privacy" class="cookie-banner__link">Политика за поверителност</a>.
+        </p>
+      </div>
+
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--primary btn--sm" (click)="acceptCookies()">
+          Разбрах
+        </button>
+      </div>
+    </div>
+  </div>
+}

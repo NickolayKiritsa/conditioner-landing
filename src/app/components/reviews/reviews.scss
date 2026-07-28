@@ -1,0 +1,274 @@
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  overflow: hidden;
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    .badge {
+      background: rgba(99, 102, 241, 0.1);
+      color: #6366f1;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 0.8rem;
+      color: #0f172a;
+    }
+  }
+
+  /* Фиксированная высота обертки, чтобы карточки не прыгали */
+  .cards-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+  }
+
+  .testimonial-card {
+    position: absolute;
+    width: 100%;
+    max-width: 480px;
+    height: 310px; /* Жесткий размер карточки */
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem 2.2rem;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0,0,0,0.1);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+
+    .card-content {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      font-size: 3.5rem;
+      color: #f1f5f9;
+      font-family: serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    /* Ограничение размера текста (Clamp) */
+    .text-wrapper {
+      position: relative;
+      z-index: 1;
+
+      .text {
+        font-size: 0.98rem;
+        line-height: 1.55;
+        color: #334155;
+        margin: 0;
+
+        /* Кламп на 3 строки по умолчанию */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all 0.3s ease;
+
+        &.expanded {
+          display: block;
+          overflow-y: auto;
+          max-height: 110px; /* Чтобы не перекрывать инфо об авторе */
+          padding-right: 4px;
+
+          /* Кастомный скроллбар для развернутого текста */
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .read-more-btn {
+        background: none;
+        border: none;
+        color: #6366f1;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 4px 0 0 0;
+        cursor: pointer;
+        display: inline-block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .rating {
+      margin-top: auto;
+      padding-top: 0.8rem;
+
+      .star {
+        color: #cbd5e1;
+        font-size: 1.1rem;
+        margin-right: 2px;
+        &.filled { color: #f59e0b; }
+      }
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.8rem;
+
+      .avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .name {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #0f172a;
+        font-weight: 600;
+      }
+
+      .role {
+        font-size: 0.8rem;
+        color: #64748b;
+      }
+    }
+
+    /* 3D Стек эффекты */
+    &.active {
+      opacity: 1;
+      transform: translateZ(0) scale(1);
+      z-index: 3;
+      border: 1px solid rgba(99, 102, 241, 0.15);
+    }
+
+    &.prev {
+      opacity: 0.4;
+      transform: translateX(-35%) translateZ(-100px) rotateY(10deg) scale(0.9);
+      z-index: 2;
+    }
+
+    &.next {
+      opacity: 0.4;
+      transform: translateX(35%) translateZ(-100px) rotateY(-10deg) scale(0.9);
+      z-index: 2;
+    }
+
+    &.hidden {
+      opacity: 0;
+      transform: translateZ(-200px) scale(0.8);
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #334155;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #6366f1;
+        color: #fff;
+        border-color: #6366f1;
+      }
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: #cbd5e1;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          width: 20px;
+          background: #6366f1;
+        }
+      }
+    }
+  }
+
+  /* Нижняя кнопка «Смотреть все отзывы» */
+  .footer-actions {
+    margin-top: 2rem;
+
+    .see-all-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.2);
+
+      .count {
+        color: #94a3b8;
+        font-size: 0.85rem;
+      }
+
+      &:hover {
+        background: #1e293b;
+        transform: translateY(-2px);
+        box-shadow: 0 15px 25px -5px rgba(15, 23, 42, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}

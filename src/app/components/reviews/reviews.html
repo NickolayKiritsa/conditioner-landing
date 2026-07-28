@@ -1,0 +1,146 @@
+<!--
+<div class="testimonials-container">
+  <div class="header">
+    <span class="badge">Отзывы</span>
+    <h2>Что говорят клиенты</h2>
+  </div>
+
+  <div class="cards-wrapper">
+    @for (item of testimonials(); track item.id; let i = $index) {
+      <div
+        class="testimonial-card"
+        [class.active]="currentIndex() === i"
+        [class.prev]="getCardPosition(i) === 'prev'"
+        [class.next]="getCardPosition(i) === 'next'"
+        [class.hidden]="getCardPosition(i) === 'hidden'"
+        (click)="selectCard(i)">
+
+        <div class="card-content">
+          <div class="quote-icon">“</div>
+
+          &lt;!&ndash; Ограниченный по высоте блок с текстом &ndash;&gt;
+          <div class="text-wrapper">
+            <p class="text" [class.expanded]="expandedCardId() === item.id">
+              {{ item.text }}
+            </p>
+            @if (item.text.length > maxCharsLimit) {
+              <button
+                class="read-more-btn"
+                (click)="toggleExpand($event, item.id)">
+                {{ expandedCardId() === item.id ? 'Свернуть' : 'Читать полностью' }}
+              </button>
+            }
+          </div>
+
+          <div class="rating">
+            @for (star of [1,2,3,4,5]; track star) {
+              <span class="star" [class.filled]="star <= item.rating">★</span>
+            }
+          </div>
+
+          <div class="author-info">
+            <img [src]="item.avatar" [alt]="item.name" class="avatar" />
+            <div>
+              <h4 class="name">{{ item.name }}</h4>
+              <span class="role">{{ item.role }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="controls">
+    <button class="nav-btn" (click)="prev()" aria-label="Предыдущий">←</button>
+    <div class="dots">
+      @for (item of testimonials(); track item.id; let i = $index) {
+        <span
+          class="dot"
+          [class.active]="currentIndex() === i"
+          (click)="selectCard(i)"></span>
+      }
+    </div>
+    <button class="nav-btn" (click)="next()" aria-label="Следующий">→</button>
+  </div>
+
+  &lt;!&ndash; Главная кнопка «Смотреть все отзывы» &ndash;&gt;
+  <div class="footer-actions">
+    <button routerLink="/reviews" class="see-all-btn" (click)="onSeeAllClick()">
+      <span>Смотреть все отзывы</span>
+      <span class="count">({{ testimonials().length }})</span>
+    </button>
+  </div>
+</div>
+-->
+<div class="testimonials-container">
+  <div class="header">
+    <span class="badge">Отзиви</span>
+    <h2>Какво казват клиентите</h2>
+  </div>
+
+  <div class="cards-wrapper">
+    @for (item of testimonials(); track item.id; let i = $index) {
+      <div
+        class="testimonial-card"
+        [class.active]="currentIndex() === i"
+        [class.prev]="getCardPosition(i) === 'prev'"
+        [class.next]="getCardPosition(i) === 'next'"
+        [class.hidden]="getCardPosition(i) === 'hidden'"
+        (click)="selectCard(i)">
+
+        <div class="card-content">
+          <div class="quote-icon">“</div>
+
+          <!-- Блок с текст, ограничен по височина -->
+          <div class="text-wrapper">
+            <p class="text" [class.expanded]="expandedCardId() === item.id">
+              {{ item.text }}
+            </p>
+            @if (item.text.length > maxCharsLimit) {
+              <button
+                class="read-more-btn"
+                (click)="toggleExpand($event, item.id)">
+                {{ expandedCardId() === item.id ? 'Свий' : 'Прочети целия' }}
+              </button>
+            }
+          </div>
+
+          <div class="rating">
+            @for (star of [1,2,3,4,5]; track star) {
+              <span class="star" [class.filled]="star <= item.rating">★</span>
+            }
+          </div>
+
+          <div class="author-info">
+            <img [src]="item.avatar" [alt]="item.name" class="avatar" />
+            <div>
+              <h4 class="name">{{ item.name }}</h4>
+              <span class="role">{{ item.role }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="controls">
+    <button class="nav-btn" (click)="prev()" aria-label="Предишен">←</button>
+    <div class="dots">
+      @for (item of testimonials(); track item.id; let i = $index) {
+        <span
+          class="dot"
+          [class.active]="currentIndex() === i"
+          (click)="selectCard(i)"></span>
+      }
+    </div>
+    <button class="nav-btn" (click)="next()" aria-label="Следващ">→</button>
+  </div>
+
+  <!-- Основен бутон «Виж всички отзиви» -->
+  <div class="footer-actions">
+    <button routerLink="/reviews" class="see-all-btn" (click)="onSeeAllClick()">
+      <span>Виж всички отзиви</span>
+      <span class="count">(9)</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  pointer-events: none; // Чтобы клики мимо баннера проходили на сайт
+
+  &__container {
+    pointer-events: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(29, 29, 31, 0.95); // Полупрозрачный темный фон (--color-dark)
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--color-white, #ffffff);
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+      padding: 16px;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: 640px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &__link {
+    color: var(--color-primary, #007aff);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: var(--transition-smooth, opacity 0.2s);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    .btn {
+      width: 100%; // Для удобного тапа на мобиле
+    }
+  }
+}
+
+// Плавное появление снизу
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -71,6 +71,7 @@
   &__image {
     max-width: 100%;
     height: auto;
+<<<<<<< HEAD
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
   }
 }
@@ -97,3 +98,11 @@
     &:hover { background-color: #f5f5f7; }
   }
 }
+=======
+    border: 1px solid #e5e5ea;
+    border-radius: 24px;
+    width: 550px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
+  }
+}
+>>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673

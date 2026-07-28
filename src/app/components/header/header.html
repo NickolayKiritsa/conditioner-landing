@@ -1,5 +1,6 @@
 <header class="header">
   <div class="header__container">
+<<<<<<< HEAD
     <!-- Логотип -->
     <a href="#" class="header__logo" (click)="closeMenu()">
       <span class="logo-icon">❄️</span> Clima<span class="logo-accent">Pro</span>
@@ -31,11 +32,31 @@
     <button
       class="header__burger"
       [class.header__burger--active]="isMenuOpen()"
+=======
+    <a href="#" class="header__logo" (click)="closeMenu()">
+      <span class="logo-icon">❄️</span> Arctic<span class="logo-accent">Air</span>
+    </a>
+    <nav class="header__nav" [class.header__nav--open]="isMenuOpen()">
+<!--      <ul class="header__menu">
+        <li><a href="#features" class="header__link" (click)="closeMenu()">Преимущества</a></li>
+        <li><a href="#calculator" class="header__link" (click)="closeMenu()">Расчет мощности</a></li>
+        <li><a href="#reviews" class="header__link" (click)="closeMenu()">Отзывы</a></li>
+      </ul>-->
+    </nav>
+<!--
+    <button
+      class="header__burger"
+      [class.header__burger&#45;&#45;active]="isMenuOpen()"
+>>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
       (click)="toggleMenu()"
       aria-label="Открыть меню">
       <span></span>
       <span></span>
       <span></span>
     </button>
+<<<<<<< HEAD
+=======
+-->
+>>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
   </div>
 </header>

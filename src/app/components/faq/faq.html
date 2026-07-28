@@ -1,0 +1,33 @@
+<section class="faq-section">
+  <div class="faq-container">
+
+    <div class="faq-header">
+      <span class="faq-subtitle">Имате ли още въпроси?</span>
+      <h2 class="faq-title">Често задавани въпроси </h2>
+      <p class="faq-description">Ако не сте намерили отговор на въпроса си, свържете се с нашия мениджър в чата.</p>
+    </div>
+
+    <div class="faq-list">
+      @for (item of faqList; track $index) {
+        <div
+          class="faq-item"
+          [class.active]="openIndex() === $index"
+          (click)="toggleFaq($index)"
+        >
+          <div class="faq-trigger">
+            <span class="faq-question">{{ item.question }}</span>
+            <div class="faq-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p class="faq-answer">{{ item.answer }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

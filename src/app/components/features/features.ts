@@ -1,4 +1,8 @@
 import {Component, signal} from '@angular/core';
+<<<<<<< HEAD
+=======
+import {PurchaseButton} from '../purchase-button/purchase-button';
+>>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
 interface Feature {
   icon: string;
   title: string;
@@ -6,7 +10,13 @@ interface Feature {
 }
 @Component({
   selector: 'app-features',
+<<<<<<< HEAD
   imports: [],
+=======
+  imports: [
+    PurchaseButton
+  ],
+>>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
   templateUrl: './features.html',
   styleUrl: './features.scss',
 })
@@ -33,4 +43,11 @@ export class Features {
       description: 'Встроенный ионизатор уничтожает до 99% бактерий, вирусов и задерживает мелкую пыль.'
     }
   ]);
+<<<<<<< HEAD
+=======
+  onOrder() {
+    console.log('Пользователь нажал кнопку заказа');
+    // Здесь ваша логика: открытие формы, переход в корзину и т.д.
+  }
+>>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
 }
