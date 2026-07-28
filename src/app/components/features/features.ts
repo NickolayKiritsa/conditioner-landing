@@ -1,3 +1,4 @@
+/*
 import {Component, signal} from '@angular/core';
 <<<<<<< HEAD
 =======
@@ -51,3 +52,4 @@ export class Features {
   }
 >>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
 }
+*/

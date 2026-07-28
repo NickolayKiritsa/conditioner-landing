@@ -1,10 +1,4 @@
 import {Component, signal} from '@angular/core';
-<<<<<<< HEAD
-
-@Component({
-  selector: 'app-footer',
-  imports: [],
-=======
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -12,7 +6,6 @@ import {RouterLink} from '@angular/router';
   imports: [
     RouterLink
   ],
->>>>>>> 46d31c0e8b2ee33b524240789f79ca438e1ed673
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
