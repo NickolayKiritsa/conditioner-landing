@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {PurchaseButton} from '../purchase-button/purchase-button';
+import {Reviews} from '../reviews/reviews';
 
 @Component({
   selector: 'app-promo',
   imports: [
     NgForOf,
-    PurchaseButton
+    PurchaseButton,
+    Reviews
   ],
   templateUrl: './promo.html',
   styleUrl: './promo.scss',

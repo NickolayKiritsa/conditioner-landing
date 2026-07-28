@@ -1,19 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {Hero} from './components/hero/hero';
-import {Features} from './components/features/features';
+import {Component} from '@angular/core';
 import {Header} from './components/header/header';
 import {Footer} from './components/footer/footer';
-import {Faq} from './components/faq/faq';
-import {Compare} from './components/compare/compare';
-import {Promo} from './components/promo/promo';
+import {RouterOutlet} from '@angular/router';
+import {CookiesBanner} from './components/cookies-banner/cookies-banner';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, Features, Header, Footer, Faq, Compare, Promo],
+  imports: [Header, Footer, RouterOutlet, CookiesBanner],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('conditioner-landing');
-}
+export class App {}

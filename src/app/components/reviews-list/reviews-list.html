@@ -1,0 +1,220 @@
+<!--
+<div class="all-testimonials-page">
+  <div class="container">
+
+    &lt;!&ndash; Шапка страницы &ndash;&gt;
+    <header class="page-header">
+      <a routerLink="/" class="back-link">
+        <span class="arrow">←</span> На главную
+      </a>
+      <span class="badge">Отзывы клиентов</span>
+      <h1>Что говорят о нашей работе</h1>
+      <p class="subtitle">
+        Всего отзывов: <strong>{{ filteredTestimonials().length }}</strong>
+      </p>
+    </header>
+
+    &lt;!&ndash; Панель фильтрации и поиска &ndash;&gt;
+    <div class="filters-bar">
+      &lt;!&ndash; Поиск &ndash;&gt;
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Поиск по отзыву или имени..."
+          [value]="searchQuery()"
+          (input)="onSearchInput($event)" />
+      </div>
+
+      &lt;!&ndash; Фильтр по звёздам &ndash;&gt;
+      <div class="rating-filter">
+        <button
+          class="filter-chip"
+          [class.active]="selectedRating() === null"
+          (click)="setRatingFilter(null)">
+          Все
+        </button>
+        @for (star of [5, 4, 3, 2, 1]; track star) {
+          <button
+            class="filter-chip"
+            [class.active]="selectedRating() === star"
+            (click)="setRatingFilter(star)">
+            {{ star }} ★
+          </button>
+        }
+      </div>
+
+      &lt;!&ndash; Сортировка &ndash;&gt;
+      <div class="sort-box">
+        <select (change)="onSortChange($event)">
+          <option value="newest">Сначала новые</option>
+          <option value="highest">С высокой оценкой</option>
+          <option value="lowest">С низкой оценкой</option>
+        </select>
+      </div>
+    </div>
+
+    &lt;!&ndash; Сетка отзывов &ndash;&gt;
+    @if (filteredTestimonials().length > 0) {
+      <div class="testimonials-grid">
+        @for (item of filteredTestimonials(); track item.id) {
+          <div class="testimonial-card">
+            <div class="card-content">
+              <div class="quote-icon">“</div>
+
+              &lt;!&ndash; Текст с раскрытием &ndash;&gt;
+              <div class="text-wrapper">
+                <p class="text" [class.expanded]="expandedIds().has(item.id)">
+                  {{ item.text }}
+                </p>
+                @if (item.text.length > maxCharsLimit) {
+                  <button
+                    class="read-more-btn"
+                    (click)="toggleExpand(item.id)">
+                    {{ expandedIds().has(item.id) ? 'Свернуть' : 'Читать полностью' }}
+                  </button>
+                }
+              </div>
+
+              <div class="card-footer">
+                <div class="rating">
+                  @for (star of [1,2,3,4,5]; track star) {
+                    <span class="star" [class.filled]="star <= item.rating">★</span>
+                  }
+                </div>
+
+                <div class="author-info">
+                  <img [src]="item.avatar" [alt]="item.name" class="avatar" />
+                  <div>
+                    <h4 class="name">{{ item.name }}</h4>
+                    <span class="role">{{ item.role }}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      &lt;!&ndash; Сообщение, если ничего не найдено &ndash;&gt;
+      <div class="empty-state">
+        <div class="empty-icon">💬</div>
+        <h3>Отзывы не найдены</h3>
+        <p>Попробуйте изменить параметры поиска или сбросить фильтры.</p>
+        <button class="reset-btn" (click)="resetFilters()">Сбросить фильтры</button>
+      </div>
+    }
+
+  </div>
+</div>
+-->
+<div class="all-testimonials-page">
+  <div class="container">
+
+    <!-- Заглавие на страницата -->
+    <header class="page-header">
+      <a routerLink="/" class="back-link">
+        <span class="arrow">←</span> Към началната страница
+      </a>
+      <span class="badge">Отзиви от клиенти</span>
+      <h1>Какво казват за нашата работа</h1>
+      <p class="subtitle">
+        Общо отзиви: <strong>{{ filteredTestimonials().length }}</strong>
+      </p>
+    </header>
+
+    <!-- Панел за филтриране и търсене -->
+    <div class="filters-bar">
+      <!-- Търсене -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Търсене по отзив или име..."
+          [value]="searchQuery()"
+          (input)="onSearchInput($event)" />
+      </div>
+
+      <!-- Филтър по звезди -->
+      <div class="rating-filter">
+        <button
+          class="filter-chip"
+          [class.active]="selectedRating() === null"
+          (click)="setRatingFilter(null)">
+          Всички
+        </button>
+        @for (star of [5, 4, 3, 2, 1]; track star) {
+          <button
+            class="filter-chip"
+            [class.active]="selectedRating() === star"
+            (click)="setRatingFilter(star)">
+            {{ star }} ★
+          </button>
+        }
+      </div>
+
+      <!-- Сортиране -->
+      <div class="sort-box">
+        <select (change)="onSortChange($event)">
+          <option value="newest">Първо най-новите</option>
+          <option value="highest">С най-висока оценка</option>
+          <option value="lowest">С най-ниска оценка</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Мрежа с отзиви -->
+    @if (filteredTestimonials().length > 0) {
+      <div class="testimonials-grid">
+        @for (item of filteredTestimonials(); track item.id) {
+          <div class="testimonial-card">
+            <div class="card-content">
+              <div class="quote-icon">“</div>
+
+              <!-- Текст с разгъване -->
+              <div class="text-wrapper">
+                <p class="text" [class.expanded]="expandedIds().has(item.id)">
+                  {{ item.text }}
+                </p>
+                @if (item.text.length > maxCharsLimit) {
+                  <button
+                    class="read-more-btn"
+                    (click)="toggleExpand(item.id)">
+                    {{ expandedIds().has(item.id) ? 'Свий' : 'Прочети целия' }}
+                  </button>
+                }
+              </div>
+
+              <div class="card-footer">
+                <div class="rating">
+                  @for (star of [1,2,3,4,5]; track star) {
+                    <span class="star" [class.filled]="star <= item.rating">★</span>
+                  }
+                </div>
+
+                <div class="author-info">
+                  <img [src]="item.avatar" [alt]="item.name" class="avatar" />
+                  <div>
+                    <h4 class="name">{{ item.name }}</h4>
+                    <span class="role">{{ item.role }}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <!-- Съобщение, ако нищо не е намерено -->
+      <div class="empty-state">
+        <div class="empty-icon">💬</div>
+        <h3>Няма намерени отзиви</h3>
+        <p>Опитайте да промените параметрите на търсене или да нулирате филтрите.</p>
+        <button class="reset-btn" (click)="resetFilters()">Нулиране на филтрите</button>
+      </div>
+    }
+
+  </div>
+</div>
